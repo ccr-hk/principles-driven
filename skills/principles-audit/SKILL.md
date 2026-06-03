@@ -1,15 +1,13 @@
 ---
 name: principles-audit
-description: Use when sweeping a whole codebase for consistency with its principles — periodic consistency checks, onboarding or inheriting an existing repo, after a large principle change, or when the user asks "are we consistent with our principles". Distinct from principles-check (one decision/diff) — this is the full-repo sweep.
+description: Use when doing a full-codebase sweep for consistency with PRINCIPLES.md — periodic consistency checks, onboarding or inheriting a repo, after a large principle change, or when asked "are we consistent with our principles?". Distinct from principles-check (single decision/diff).
 ---
 
 # Principles-Audit
 
 Sweep the whole codebase against every `active` principle, rank violations by
-priority, and propose remediation. A capable model finds the obvious violations
-in a small repo; this skill exists so the sweep stays **honest at scale** —
-proven on a sample first, fanned out so nothing is skipped, and explicit about
-what was and wasn't covered.
+priority, and propose remediation. Stays honest at scale by proving on a sample
+first, fanning out so nothing is skipped, and being explicit about coverage.
 
 **REQUIRED:** read `../principles-driven/principle-schema.md` (you resolve and
 rank by `Priority`, scope by `Applies to`, and ignore `proposed`/`retired`).

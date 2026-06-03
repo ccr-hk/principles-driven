@@ -1,6 +1,6 @@
 ---
 name: principles-review
-description: Use when establishing, editing, merging, or cleaning up a project's guiding principles / decision policy — including mid-development with no or a thin PRINCIPLES.md, onboarding an existing repo, when a user instruction implies a new or changed principle, or when principles overlap or bloat. Symptoms — inconsistent UI/UX/data decisions across the codebase, principles that contradict each other or the harness rules, or asking what the project is optimizing for.
+description: Use when establishing, editing, merging, or cleaning up PRINCIPLES.md — no or thin PRINCIPLES.md, onboarding an existing repo, when a user instruction implies a new or changed principle, or when principles overlap or bloat. Symptoms — inconsistent UI/UX/data decisions across the codebase, principles that contradict each other or the harness rules, or asking what the project is optimizing for.
 ---
 
 # Principles-Review
@@ -15,8 +15,7 @@ altitude heuristic) before writing any principle.
 ## Workflow
 
 1. **Survey.** Read code patterns, `README`/`DESIGN`/docs, the existing harness
-   file (`CLAUDE.md`/`AGENTS.md`/`GEMINI.md`), and recent commits. Large repo →
-   delegate the survey to a subagent.
+   file (`CLAUDE.md`/`AGENTS.md`/`GEMINI.md`), and recent commits.
 2. **Infer de-facto principles.** Draft candidates from what the code already
    does consistently. These are the implicit policies in force today.
 3. **Find self-contradictions.** Where the code does X in one place and not-X in

@@ -1,6 +1,6 @@
 ---
 name: principles-update
-description: Use when the user asks to update the principles-driven skills, check whether a newer version exists, or check for principles skill updates — and as an opportunistic self-check when the installed principles skills look out of date. Never updates without the user's explicit confirmation.
+description: Use when the user asks to update the principles-driven skills or check for a newer version — and opportunistically when the installed principles skills look out of date.
 ---
 
 # Principles-Update
@@ -45,11 +45,4 @@ does a read-only version check first, then defers to that CLI to apply.
 
 7. **Confirm the result** — re-check the installed version and report it.
 
-## Rules
-
-- **Never update without explicit confirmation.** Checking and showing the diff
-  unprompted is fine; applying is not.
-- **Read-only until they agree** — `curl` the version/changelog, don't run the
-  updater.
-- If the network check fails, say so plainly; don't guess whether an update
-  exists.
+If the network check fails, say so plainly; don't guess whether an update exists.

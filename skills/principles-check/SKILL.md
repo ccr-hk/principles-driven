@@ -1,14 +1,13 @@
 ---
 name: principles-check
-description: Use when about to make a judgment call during coding, or when reviewing a diff/PR for adherence to the project's principles. Symptoms — choosing which data fields or labels appear on a UI, whether an action needs a confirmation prompt, show-detail-inline vs fold-away, trading ease-of-use against accuracy, how verbose an error or empty state should be, or any decision where two reasonable implementations exist and PRINCIPLES.md might have a policy. Also when a user instruction conflicts with an existing principle.
+description: Use when about to make a judgment call during coding, or when reviewing a diff/PR for adherence to PRINCIPLES.md. Symptoms — choosing which data fields or labels appear on a UI, whether an action needs a confirmation prompt, show-detail-inline vs fold-away, trading ease-of-use against accuracy, how verbose an error or empty state should be. Also when a user instruction conflicts with an existing principle.
 ---
 
 # Principles-Check
 
-Hold a pending decision (or a diff) up against `PRINCIPLES.md` and resolve any
-conflict **with the user**, not alone. A capable model already notices the
-screaming-obvious conflict; this skill exists so you check the *whole* set, stop
-instead of quietly picking a side, and **record** overrides so they don't recur.
+Match a pending decision or diff against **all** of `PRINCIPLES.md`, surface
+any conflict with the user instead of picking a side, and **record** overrides
+so they don't recur.
 
 **REQUIRED:** read `../principles-driven/principle-schema.md` for the entry
 schema (you resolve by `Priority` and scope by `Applies to`).
