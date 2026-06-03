@@ -1,6 +1,6 @@
 ---
 name: principles-review
-description: Use when establishing, editing, merging, or cleaning up a project's guiding principles / decision policy — including mid-development with no or a thin PRINCIPLES.md, onboarding an existing repo, when a user instruction implies a new or changed principle, or when principles overlap or bloat. Symptoms: "what are we optimizing for", inconsistent UI/UX/data decisions across the codebase, principles that contradict each other or the harness rules.
+description: Use when establishing, editing, merging, or cleaning up a project's guiding principles / decision policy — including mid-development with no or a thin PRINCIPLES.md, onboarding an existing repo, when a user instruction implies a new or changed principle, or when principles overlap or bloat. Symptoms — inconsistent UI/UX/data decisions across the codebase, principles that contradict each other or the harness rules, or asking what the project is optimizing for.
 ---
 
 # Principles-Review

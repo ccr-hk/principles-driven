@@ -5,6 +5,26 @@ All notable changes to the principles-driven skill suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/) and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] — 2026-06-03
+
+Simplified to one-command install via the open `skills` CLI.
+
+### Changed
+- **Install is now `npx skills add ccr-hk/principles-driven`** — interactive,
+  cross-agent (Claude Code, Codex, Cursor, Antigravity + 60 more), same on
+  Linux/macOS/Windows. The CLI handles per-agent conversion, symlink/copy,
+  global/project scope, and updates.
+- `principles-update` rewritten to use `npx skills update` (still asks first).
+
+### Fixed
+- `principles-review` was silently dropped by strict YAML parsers: its
+  frontmatter `description` had a `colon-space` ("Symptoms: ...") inside an
+  unquoted scalar. Reworded so all 5 skills are discovered.
+
+### Removed
+- Bespoke `install.sh`/`install.ps1`, `update.sh`/`update.ps1`, the Cursor
+  `.mdc` generator, and `dist/cursor/` — all superseded by the `skills` CLI.
+
 ## [0.1.0] — 2026-06-03
 
 First release.
