@@ -5,6 +5,15 @@ All notable changes to the principles-driven skill suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/) and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] — 2026-06-03
+
+### Changed
+- Trimmed descriptions across all 5 skills for token efficiency; removed
+  redundant "this skill exists so" meta-sentences from body intros.
+- `principles-review` step 1: removed "Large repo → subagent" (already in step 3).
+- `principles-update`: removed redundant `## Rules` section (covered by step 5).
+- All trigger keywords and anti-rationalization content preserved.
+
 ## [0.2.0] — 2026-06-03
 
 Simplified to one-command install via the open `skills` CLI.
