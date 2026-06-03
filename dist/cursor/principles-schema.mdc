@@ -1,0 +1,79 @@
+---
+description: Reference — principle entry schema and altitude heuristic for the principles-driven rules.
+globs:
+alwaysApply: false
+---
+
+# Principle schema + altitude heuristic
+
+Shared reference for `principles-review`, `principles-check`, `principles-audit`.
+
+## Where principles live
+
+- One `PRINCIPLES.md` at the project root (or `docs/principles.md` if the
+  project already keeps design docs under `docs/` — match the existing
+  convention, don't invent a new home).
+- The active harness file **must** contain a pointer so the model actually
+  loads the principles during coding. Detect which file the project uses —
+  `CLAUDE.md`, `AGENTS.md`, or `GEMINI.md` — and add (once):
+
+  > **Principles:** On every judgment call, honor `PRINCIPLES.md`. Before a
+  > UI/data/UX decision it covers, follow it; on a conflict, stop and use the
+  > `principles-check` skill.
+
+  Without this pointer the principles file is dead weight — it never enters
+  context during normal work.
+
+## Entry schema
+
+Every entry uses this exact shape. The fields are not optional decoration —
+`principles-check` and `principles-audit` rely on `ID`, `Applies to`, and
+`Priority` to cite, scope, and resolve conflicts.
+
+```
+## P-007: Prefer ease-of-use over precision in primary flows
+Statement: Default views optimize for fast comprehension; exact values one click deeper.
+Why: Most users scan, don't audit; precision-first clutters the 90% case.
+Applies to: general            # OR a scope, e.g. "dashboard + list views only"
+Do: rounded headline figure + a details affordance for the exact value
+Don't: render machine precision (toFixed(6)) in a list row
+Priority: 2                    # lower number = higher precedence in conflicts
+Conflicts-with: yields to P-001 (data-integrity) on the final client invoice
+Status: active                 # active | proposed | retired
+```
+
+- **ID** `P-NNN` — stable handle. Never renumber a live ID; retire instead.
+- **Statement** — one sentence of policy.
+- **Why** — the rationale, so the model can extend the rule to cases the
+  statement doesn't name.
+- **Applies to** — `general`, or an explicit scope. This carries the
+  general-vs-specific-case distinction. Some principles bind the whole app;
+  some bind only certain surfaces.
+- **Do / Don't** — concrete examples that make the entry checkable.
+- **Priority** — integer for deterministic conflict resolution.
+- **Conflicts-with** — known tensions and how they resolve (optional).
+- **Status** — `active` honored now; `proposed` under debate; `retired` kept
+  for history, not enforced.
+
+## Altitude heuristic — the balance rule
+
+A candidate earns a slot only if ALL three hold:
+
+1. **Decision-shaping** — two reasonable agents could read the situation and
+   choose oppositely without it. If everyone lands the same way anyway, it's
+   not a principle.
+2. **Not mechanically enforceable** — no linter, formatter, type system, or
+   test already enforces it. If one can, it belongs in config/CI, not here.
+3. **Not pure taste** — it ties to a user, product, or data outcome, not
+   personal preference.
+
+Guards:
+- **Too granular** → it's really a rule or config value. Move it out.
+- **Too vague** → not checkable. Sharpen Statement + add Do/Don't, or drop.
+
+Sharpening test: **if you can't write both a Do and a Don't, the entry is too
+vague to keep.**
+
+Canonical reject: "Use 2-space indentation; always destructure imports." That
+is a formatter/lint rule (fails test 2) — it does NOT belong in `PRINCIPLES.md`
+no matter how often it's true.

@@ -1,7 +1,9 @@
 ---
-name: principles-driven
 description: Use when working with a project's guiding principles or decision policy and unsure which principles skill applies — routes to authoring/maintaining, checking a decision, or auditing the whole codebase.
+globs:
+alwaysApply: false
 ---
+
 
 # Principles-Driven Development
 
